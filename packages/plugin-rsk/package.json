@@ -1,0 +1,41 @@
+{
+  "name": "@elizaos/plugin-rsk",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup --format esm",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@elizaos/core": "workspace:*",
+    "@esbuild-plugins/node-resolve": "0.2.2",
+    "axios": "^1.8.3",
+    "node-cache": "5.1.2",
+    "tsup": "8.3.5",
+    "web3": "^4.6.0",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "typescript": "5.6.3"
+  },
+  "peerDependencies": {
+    "whatwg-url": "7.1.0"
+  },
+  "agentConfig": {
+    "pluginType": "elizaos:plugin:1.0.0",
+    "pluginParameters": {
+      "RPC_URL": {
+        "type": "string",
+        "description": "RSK RPC URL",
+        "default": "https://public-node.testnet.rsk.co"
+      }
+    }
+  }
+}
